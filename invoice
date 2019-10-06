@@ -1,0 +1,62 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class Invoice
+{
+public:
+    char no[50];
+    char name[100];
+    int quantity;
+    int price;
+    char ino[50], iname[100];
+    int A,B;
+    Invoice()
+    {
+        strcpy(no, "TADA");
+        strcpy(name,"BALALALA");
+        quantity=0;
+        price=0;
+    }
+    void getdata()
+    {
+        cout<<"Enter item no. ";
+        cin>>no;
+        cout<<endl<<"Enter item name ";
+        cin>>name;
+        cout<<endl<<"Enter item quantity ";
+        cin>>quantity;
+        cout<<endl<<"Enter item price ";
+        cin>>price;
+    }
+    void setdata()
+    {
+        cout<<"Item no.:  "<<no<<endl<<endl;
+        cout<<"Item name:  "<<name<<endl<<endl;
+        cout<<"Quantity of Item:  "<<quantity<<endl<<endl;
+        cout<<"Item price:  "<<price<<endl<<endl;
+    }
+    int getinvoiceAmounnt( )
+    {
+        int a;
+        a= price*quantity;
+        return a;
+    }
+};
+int main()
+{
+    Invoice p[2];
+    int i,t,k=0;
+    for(i=0;i<2;i++)
+    {
+        p[i].getdata();
+    }
+    for(i=0;i<2;i++)
+    {
+        p[i].setdata();
+        t=p[i].getinvoiceAmounnt();
+        cout<<"Amount is "<<t<<endl<<endl;
+        k=k+t;
+    }
+    cout<<"Total amount is: "<<k<<endl;
+    return 0;
+}
